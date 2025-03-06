@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labourer Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Labourer Dashboard</h1>
+    </header>
+    <div class="container">
+        <h2>Your Bookings</h2>
+        <div class="dashboard">
+            <div class="card">
+                <ul>
+                    {% for booking in bookings %}
+                    <li>
+                        <strong>Customer:</strong> {{ booking.customer.username }}<br>
+                        <strong>Status:</strong> {{ booking.status }}<br>
+                        <a href="{{ url_for('update_booking', booking_id=booking.id, status='accepted') }}">Accept</a> |
+                        <a href="{{ url_for('update_booking', booking_id=booking.id, status='rejected') }}">Reject</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+    <footer>
+        <p>&copy; 2023 Labour Booking Platform</p>
+    </footer>
+</body>
+</html>
