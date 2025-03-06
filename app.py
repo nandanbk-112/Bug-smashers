@@ -88,6 +88,5 @@ def logout():
     return redirect(url_for('home'))
 
 if __name__ == '_main_':
-    app.run(host='127.0.0.1', port=5000, debug=True)
     db.create_all()
-    app.run(debug=True)
+    app.run(host='127.0.0.1', port=5000, debug=True)
