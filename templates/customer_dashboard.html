@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Customer Dashboard</h1>
+    </header>
+    <div class="container">
+        <h2>Available Labourers</h2>
+        <div class="search-results">
+            {% for labourer in labourers %}
+            <div class="result">
+                <h3>{{ labourer.user.username }}</h3>
+                <p><strong>Skills:</strong> {{ labourer.skills }}</p>
+                <p><strong>Experience:</strong> {{ labourer.experience }}</p>
+                <p><strong>Availability:</strong> {{ labourer.availability }}</p>
+                <p><strong>Hourly Rate:</strong> ${{ labourer.hourly_rate }}</p>
+                <form method="POST" action="{{ url_for('book', labourer_id=labourer.user_id) }}">
+                    <button type="submit">Book</button>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+    <footer>
+        <p>&copy; 2023 Labour Booking Platform</p>
+    </footer>
+</body>
+</html>

@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-    <h1>Welcome to the Labour Booking Platform</h1>
-    <a href="{{ url_for('login') }}">Login</a> | <a href="{{ url_for('signup') }}">Sign Up</a>
+    <header>
+        <h1>Welcome to the Labour Booking Platform</h1>
+    </header>
+    <div class="container">
+        <a href="{{ url_for('login') }}">Login</a> | <a href="{{ url_for('signup') }}">Sign Up</a>
+    </div>
+    <footer>
+        <p>&copy; 2023 Labour Booking Platform</p>
+    </footer>
 </body>
 </html>
