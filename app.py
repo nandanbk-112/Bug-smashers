@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash, ses
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 
-app = Flask(__name__)
+app = Flask(___name__)
 app.secret_key = 'your_secret_key'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 db = SQLAlchemy(app)
@@ -88,5 +88,6 @@ def logout():
     return redirect(url_for('home'))
 
 if __name__ == '_main_':
+    app.run(host='127.0.0.1', port=5000, debug=True)
     db.create_all()
     app.run(debug=True)
