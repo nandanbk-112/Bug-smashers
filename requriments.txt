@@ -6,9 +6,9 @@ charset-normalizer==3.4.1
 click==8.1.8
 colorama==0.4.6
 distro==1.9.0
-Flask==3.1.0 
+Flask==3.1.0
 Flask-Login==0.6.3
-Flask-Mail==0.9.1
+Flask-Mail==0.10.0
 Flask-SQLAlchemy==3.1.1
 greenlet==3.1.1
 gunicorn==23.0.0
